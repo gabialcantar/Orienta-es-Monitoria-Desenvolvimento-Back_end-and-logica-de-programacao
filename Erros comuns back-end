@@ -1,0 +1,12 @@
+| **Erro**                                | **Causa**                                                                 | **Solução**                                                                     |
+| --------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **404 – Not Found**                     | Rota não configurada corretamente ou Controller/Action não existe         | Verificar `RouteConfig` / `MapRoute` e nomes das Actions/Controllers            |
+| **500 – Internal Server Error**         | Exceções não tratadas ou conexão inválida com o banco                     | Usar `try/catch`, logar erros, validar connection string                        |
+| **View não encontrada**                 | Nome da View não bate com Action ou está em pasta errada                  | Colocar em `Views/NomeController/NomeView.cshtml` ou usar `return View("Nome")` |
+| **ModelState.IsValid = false**          | Campos do formulário não correspondem ao Model ou falha em DataAnnotation | Conferir nomes (`name` nos inputs) e validações do Model                        |
+| **NullReferenceException no Model**     | Model não chega na Controller                                             | Garantir `method="post"` no form e usar `asp-for`/`get; set;`                   |
+| **Model Binding Error**                 | View espera um tipo diferente do enviado                                  | Conferir `@model` na View e `return View(model)` na Controller                  |
+| **InvalidAntiForgeryTokenException**    | Falta de token antifalsificação no formulário                             | Adicionar `@Html.AntiForgeryToken()` e `[ValidateAntiForgeryToken]`             |
+| **DbUpdateException / SqlException**    | Banco desatualizado ou migrations não aplicadas                           | Rodar `add-migration` e `update-database`, validar connection string            |
+| **ViewBag / ViewData null**             | Propriedade não definida antes do `return View()`                         | Definir antes do retorno: `ViewBag.Mensagem = "..."`                            |
+| **Erro de DI (Injeção de Dependência)** | Serviço não registrado no container                                       | Registrar no `Startup.cs`: `services.AddScoped<IInterface, Classe>()`           |
