@@ -1,1 +1,42 @@
 Principais problemas: 
+
+Pacotes Essenciais para o desenvolvimento:
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+Comandos de restauração + versão:
+dotnet add package Microsoft.EntityFrameworkCore --version 9.0.0
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 9.0.0
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 9.0.0
+dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation --version 9.0.0
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 9.0.0
+
+Comando para adição do serviço razor 
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+Mudança no front-end para seleção de perfil:
+
+erro para campo select
+
+<div class="form-group">
+    <label asp-for="Perfil"></label>
+    <select asp-for="Perfil" asp-items="Html.GetEnumSelectList<AgendaCorte.Models.Perfil>()" class="form-control"></select>
+    <span asp-validation-for="Perfil" class="text-danger"></span>
+</div>
+
+Saber qual versão está o framework
+--version
+
+Criação hard da tela de usuário utilizando o banco de dados usuário para cadastro e login:
+Para criação da tela de login/ cadastro
+
+1 - Crie um model chamado usuário - uma boa prática de programação é utilizar pk e fk tipo int
+2- Configure o dbContext e a string de conexão
+3- Crie a migration no banco
+4- Crie a controller
+Exemplo de controller
