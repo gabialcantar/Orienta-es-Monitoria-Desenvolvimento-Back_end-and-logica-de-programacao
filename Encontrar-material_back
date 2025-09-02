@@ -1,0 +1,5 @@
+Aula - AMBIENTE DE DESENVOLVIMENTO - Mostra como criar a solução, runtimecompilation e configuração do github
+Aula - CONFIGURAÇÃO DE MODELOS E BANCO DE DADOS - Configuração da string de conexão, dbcontext e pacotes que serão necessários além das migrations
+Aula - DESENVOLVIMENTO DE NOVAS FUNCIONALIDADES - Como usar o .NET para criar model, controller e views de forma hard
+Aula- CONTROLE DE USUÁRIOS -  Caso os alunos queiram restringir o acesso 
+Aula - ASP.NET CORE IDENTITY - Autenticação e login/logout
